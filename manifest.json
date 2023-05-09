@@ -29,7 +29,7 @@
       //     "48": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
       //     "128": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png"
       //   },
-      "default_popup": "popup.html"
+      "default_popup": "index.html"
     //   "default_icon": "icon.png"
     },
     "permissions": [
