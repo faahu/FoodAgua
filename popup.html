@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calories and Water Intake Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <h1>Calories and Water Intake Tracker</h1>
+    <!-- <div class="container">
+      <div class="tracker">
+        <p>KCL count: <span id="kclCount">0</span></p>
+        <button id="kclButton">Add KCL</button>
+        <button class="reset-kcl">Reset KCL</button>
+      </div>
+      <div class="tracker">
+        <p>Water intake: <span id="waterIntake">0</span> ml</p>
+        <button id="waterButton">Add Water</button>
+        <button class="reset-water">Reset Water</button>
+      </div> -->
+
+      <div class="container">
+        <div class="tracker">
+          <div class="tracker-content">
+            <p>Calories count: <span id="kclCount">0</span> kcls </p>
+            <p>Water intake: <span id="waterIntake">0</span> ml</p>
+          </div>
+          <div class="tracker-buttons">
+            <button id="kclButton">Add Kcls</button>
+            <button id="waterButton">Add Water</button>
+          </div>
+          <div class="tracker-resets">
+            <button class="reset-kcl">Reset Kcls</button>
+            <button class="reset-water">Reset Water</button>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+      <!-- <div>
+      <button class="export-button">Export to Excel</button>
+    </div> -->
+
+<!-- esto pa que sea vea, no se porque tapar el export button no dejaba ver el tiempo -->
+    <div class="export-button"></div> 
+
+
+
+
+    <button id="copy-button">Copy Data</button>
+
+    <div id="time-display">
+      <span class="time-label">Time: </span>
+    </div>
+    
+
+    <script src="popup.js"></script>
+  </body>
+</html>
