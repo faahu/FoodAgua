@@ -3,6 +3,7 @@ body {
   background-color: rgb(41, 41, 41);
   margin: 0;
   padding: 0;
+  height: auto;
   /* background-color: #141414; */
   /* border: 2px solid transparent;
   border-image: linear-gradient(to right, #ff00ff, #00ffff);
@@ -14,6 +15,8 @@ body {
 }
 
 .containerui {
+  height: 100vh;
+  width: 100%;
   background-color: #141414;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #ff00ff, #00ffff);
@@ -22,8 +25,10 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(29, 29, 29, 0.2);
+  box-sizing: border-box;
+  position: relative;
   /* height: 100%; */
-  max-height: 400px;
+  /* max-height: 400px; */
 }
 .container {
   display: flex;
@@ -72,7 +77,7 @@ h1 {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4caf75;
   color: white;
   cursor: pointer;
 }
@@ -91,7 +96,7 @@ h1 {
 }
 
 #copy-button {
-  background-color: #4CAF50;
+  background-color: #4caf75;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -184,8 +189,8 @@ h1 {
   
   #time-display {
     font-size: 16px;
-    bottom: 10px;
+    /* bottom: 10px;
     right: 10px;
-    padding: 8px 16px;
+    padding: 8px 16px; */
   }
 }
