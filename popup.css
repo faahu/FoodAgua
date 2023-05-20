@@ -22,6 +22,8 @@ body {
   position: relative;
 }
 
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -96,6 +98,24 @@ h1 {
 
 }
 
+#enviarbtn {
+  font-size: 20px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 20px;
+  background-color: #15a7eb;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 8px 4px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #00e1ff, #15a7eb);
+  border-image-slice: 1;
+
+  transform: scale(1.1);
+
+}
+
 #time-display {
   background: #1a1a1a;
   color: white;
@@ -143,7 +163,6 @@ h1 {
   .reset-kcl,
   .reset-water {
     background-color: #7a221c;
-    margin-top: 20px;
   }
   
   .tracker button:hover,
