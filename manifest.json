@@ -16,21 +16,9 @@
         "48": "fud.png",
         "128": "fud.png"
       },  
-      //  "icons": {
-      //   "16": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
-      //   "32": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
-      //   "48": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
-      //   "128": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png"
-      // },
-      // "browser_action": {
-      //   "default_icon": {
-      //     "16": "discord.ico",
-      //     "32": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
-      //     "48": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png",
-      //     "128": "https://www.pngkit.com/png/full/376-3765359_icon-nutrition-food-white-icon-png.png"
-      //   },
+
       "default_popup": "index.html"
-    //   "default_icon": "icon.png"
+  
     },
     "permissions": [
       "activeTab"

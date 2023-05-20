@@ -1,22 +1,15 @@
+
+
 body {
   font-family: sans-serif;
   background-color: rgb(41, 41, 41);
   margin: 0;
   padding: 0;
   height: auto;
-  /* background-color: #141414; */
-  /* border: 2px solid transparent;
-  border-image: linear-gradient(to right, #ff00ff, #00ffff);
-  border-image-slice: 1;
-  border-radius: 5px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(29, 29, 29, 0.2); */
 }
 
 .containerui {
   height: 768px;
-  width: 100%;
   background-color: #141414;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #ff00ff, #00ffff);
@@ -27,170 +20,146 @@ body {
   box-shadow: 0 0 10px rgba(29, 29, 29, 0.2);
   box-sizing: border-box;
   position: relative;
-  /* height: 100%; */
-  /* max-height: 400px; */
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 50px;
-  max-width: 100%;
   width: 90%;
-
 }
 
 h1 {
   text-align: center;
   color: #f0f0f0;
-  font-size: 2rem;
-  margin-top: 20px;
+  font-size: 2.5rem;
+  margin-top: 30px;
 }
 
 .tracker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #141414;
-  border: 2px solid transparent;
-  border-image: linear-gradient(to right, #ff00ff, #00ffff);
-  border-image-slice: 1;
-  border-radius: 5px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(29, 29, 29, 0.2); */
-  margin-bottom: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
   color: #fff;
-  max-width: 400px;
-  width: 90%;
-  /* max-height: 600px; */
+  max-width: 600px;
+ width: 90%;
 }
 
 .tracker p {
-  font-size: 20px;
+  font-size: 24px;
   margin: 10px;
 }
 
-.tracker button {
-  font-size: 16px;
-  margin: 10px;
-  padding: 10px 20px;
+.tracker button,
+.reset-kcl,
+.reset-water {
+  font-size: 15px;
+  padding: 15px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #4caf75;
   color: white;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+  width: 140px;
+  height: 40px;
 }
-
 
 .reset-kcl,
 .reset-water {
-  font-size: 16px;
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   background-color: #f44336;
-  color: white;
-  cursor: pointer;
+}
+
+.tracker button:hover,
+.reset-kcl:hover,
+.reset-water:hover {
+  transform: scale(1.1);
 }
 
 #copy-button {
   background-color: #4caf75;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 20px;
+  margin: 8px 4px;
   cursor: pointer;
+  border-radius: 20px;
+
 }
 
 #time-display {
   background: #1a1a1a;
   color: white;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 16px 32px;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #00e1ff, #15a7eb);
   border-image-slice: 1;
-  border-radius: 5px;
+  border-radius: 20px;
   text-align: center;
   cursor: pointer;
   position: fixed;
-  /* bottom: 20px; */
   right: 20px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
-/* media queries for different screen sizes */
-/* @media screen and (max-width: 748px) {
+@media screen and (max-width: 480px) {
   .container {
     margin-top: 30px;
   }
   
-  .tracker {
-    width: 80%;
-  }
-  
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
   .tracker p {
-    font-size: 16px;
-  }
-  
-  .tracker button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-  
-  .reset-kcl,
-  .reset-water {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-  
-  #time-display {
     font-size: 20px;
-  }
-} */
-
-@media screen and (max-width: 480px) {
-  .container {
-    margin-top: 20px;
+    margin: 10px;
   }
   
-  .tracker {
-    width: 100%;
-  }
-  
-  h1 {
-    font-size: 1.2rem;
-  }
-  
-  .tracker p {
-    font-size: 14px;
-  }
-  
-  .tracker button {
-    font-size: 12px;
-    padding: 6px 6px;
+  .tracker button,
+  .reset-kcl,
+  .reset-water {
+    font-size: 13px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    background-color: #4caf75;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
   
   .reset-kcl,
   .reset-water {
-    font-size: 12px;
-    padding: 6px 12px;
+    background-color: #f44336;
+  }
+  
+  .tracker button:hover,
+  .reset-kcl:hover,
+  .reset-water:hover {
+    transform: scale(1.1);
+  }
+  
+  #copy-button {
+    font-size: 24px;
+    padding: 16px 32px;
+    margin: 8px 4px;
   }
   
   #time-display {
-    font-size: 16px;
-    /* bottom: 10px;
+    font-size: 15px;
+    padding: 15x 32px;
+    border-radius: 20px;
     right: 10px;
-    padding: 8px 16px; */
   }
 }
+
