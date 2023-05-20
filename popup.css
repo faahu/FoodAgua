@@ -9,7 +9,7 @@ body {
 }
 
 .containerui {
-  height: 768px;
+  height: 930px;
   background-color: #141414;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #ff00ff, #00ffff);
@@ -101,13 +101,14 @@ h1 {
   color: white;
   display: inline-block;
   padding: 16px 32px;
-  border: 2px solid transparent;
+ border: 2px solid transparent;
   border-image: linear-gradient(to right, #00e1ff, #15a7eb);
   border-image-slice: 1;
   border-radius: 20px;
   text-align: center;
   cursor: pointer;
   position: fixed;
+  bottom: 20px; /* modified from right */
   right: 20px;
   font-size: 30px;
 }
@@ -129,18 +130,20 @@ h1 {
   .tracker button,
   .reset-kcl,
   .reset-water {
-    font-size: 13px;
-    padding: 16px 20px;
+    font-size: 18px;
+    padding: 1px 20px;
     border-radius: 20px;
     background-color: #4caf75;
     color: rgb(255, 255, 255);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    margin: 7px;
   }
   
   .reset-kcl,
   .reset-water {
-    background-color: #f44336;
+    background-color: #7a221c;
+    margin-top: 20px;
   }
   
   .tracker button:hover,
@@ -150,13 +153,13 @@ h1 {
   }
   
   #copy-button {
-    font-size: 24px;
+    font-size: 18px;
     padding: 16px 32px;
     margin: 8px 4px;
   }
   
   #time-display {
-    font-size: 15px;
+    font-size: 25px;
     padding: 15x 32px;
     border-radius: 20px;
     right: 10px;
