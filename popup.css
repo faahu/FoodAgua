@@ -100,10 +100,10 @@ h1 {
 
 #enviarbtn {
   font-size: 20px;
-  padding: 16px 32px;
+  padding: 13px 32px;
   border: none;
   border-radius: 20px;
-  background-color: #15a7eb;
+  background-color: #36bda6;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -175,6 +175,7 @@ h1 {
     font-size: 18px;
     padding: 16px 32px;
     margin: 8px 4px;
+    background-color: #36bda6;
   }
   
   #time-display {
