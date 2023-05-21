@@ -147,6 +147,17 @@ h1 {
     margin: 10px;
   }
   
+.tracker-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tracker-buttons button,
+.tracker-resets button {
+  margin: 5px;
+}
+
   .tracker button,
   .reset-kcl,
   .reset-water {
@@ -158,6 +169,7 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin: 7px;
+    
   }
   
   .reset-kcl,
