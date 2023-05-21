@@ -109,3 +109,23 @@ setInterval(updateTime, 1000);
 
 
 
+// EDITABle texto
+
+function makeEditable(element) {
+  const inputEl = element.querySelector('input[type="text"]');
+  if (inputEl) {
+    inputEl.readOnly = false;
+    inputEl.focus();
+    element.classList.remove('uneditable');
+    inputEl.addEventListener('blur', () => {
+      inputEl.readOnly = true;
+      element.classList.add('uneditable');
+    });
+    inputEl.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter') {
+        inputEl.readOnly = true;
+        element.classList.add('uneditable');
+      }
+    });
+  }
+}
