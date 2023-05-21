@@ -108,8 +108,8 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin: 8px 4px;
-  border: 2px solid transparent;
-  border-image: linear-gradient(to right, #00e1ff, #15a7eb);
+  /* border: 2px solid transparent; */
+  /* border-image: linear-gradient(to right, #00e1ff, #15a7eb); */
   border-image-slice: 1;
 
   transform: scale(1.1);
