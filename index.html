@@ -6,6 +6,7 @@
 
     <title>Calories and Water Intake Tracker</title>
     <link rel="stylesheet" href="popup.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
   </head>
   <body>
     
@@ -23,7 +24,7 @@
         <button id="waterButton">Add Water</button>
         <button class="reset-water">Reset Water</button>
       </div> -->
-      <div class="container">
+      <div clacalss="container">
         <div class="tracker">
           <div class="tracker-content">
             <p>Calories count: <span id="kclCount">0</span> kcls </p>
@@ -38,18 +39,19 @@
             <button class="reset-water">Reset Water</button>
           </div>
         </div>
+       
+        <button id="copy-button">Copy Data</button>
+        <button id="enviarbtn" onclick="window.location.href='https://www.notion.so/Gym-Food-39e83befaa7d48d8a63883e33392a63d'">Track it</button>
+        
+        <div class="export-button"></div> 
+        
+        
+        
+        <div id="time-display">
+          <span class="time-label">Time </span>
+        </div>
+        
       </div>
-
-      <div class="export-button"></div> 
-      
-      <button id="copy-button">Copy Data</button>
-
-      <button id="enviarbtn" onclick="window.location.href='https://www.notion.so/Gym-Food-39e83befaa7d48d8a63883e33392a63d'">Track it</button>
-      
-      <div id="time-display">
-        <span class="time-label">Time </span>
-      </div>
-
 
 <!-- TEXTO EDITABLE  PARA MACROS -->
 <!-- <div class="editable-text" ondblclick="makeEditable(this)">

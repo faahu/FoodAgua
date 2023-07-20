@@ -68,7 +68,7 @@ h1 {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 5px;
+  /* margin: 5px; */
   width: 140px;
   height: 40px;
 }
@@ -85,17 +85,20 @@ h1 {
 }
 
 #copy-button {
-  background-color: #4caf75;
-  border: none;
-  color: white;
-  padding: 13px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 20px;
-  margin: 8px 4px;
-  cursor: pointer;
+  padding: 13px 20px;
+  border: none;
   border-radius: 20px;
+  background-color: #36bda6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 8px 20px;
+  /* border: 2px solid transparent; */
+  /* border-image: linear-gradient(to right, #00e1ff, #15a7eb); */
+  border-image-slice: 1;
+
+  transform: scale(1.1);
 
 }
 
@@ -133,6 +136,9 @@ h1 {
   right: 20px;
   font-size: 30px;
 }
+
+
+
 
 @media screen and (max-width: 480px) {
   .container {
@@ -199,9 +205,9 @@ h1 {
     transform: scale(1.1);
   }
   
-  #copy-button {
+  #copy-button, #enviarbtn {
     font-size: 20px;
-    padding: 13px 32px;
+    padding: 13px 20px;
     border: none;
     border-radius: 20px;
     background-color: #36bda6;
@@ -212,10 +218,12 @@ h1 {
     /* border: 2px solid transparent; */
     /* border-image: linear-gradient(to right, #00e1ff, #15a7eb); */
     border-image-slice: 1;
-  
+  display: inline-block;
     transform: scale(1.1);
   }
   
+
+
 
   #time-display {
     font-size: 25px;
