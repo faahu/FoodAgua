@@ -3,9 +3,9 @@ const waterButton = document.getElementById('waterButton');
 const meatButton = document.getElementById('meatButton');
 const carbsButton = document.getElementById('carbsButton');
 
-const biciButton = document.getElementById('biciButton');
-const fulboButton = document.getElementById('fulboButton');
-const cardioButton = document.getElementById('cardioButton');
+// const biciButton = document.getElementById('biciButton');
+// const fulboButton = document.getElementById('fulboButton');
+// const cardioButton = document.getElementById('cardioButton');
 
 const kclCount = document.getElementById('kclCount');
 const waterIntake = document.getElementById('waterIntake');
@@ -90,7 +90,7 @@ document.getElementById("copy-button").addEventListener("click", function(){
   const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
   const formattedTime = currentTime.toLocaleTimeString('en-US', options);
 
-  const dataToCopy = `KCL count: ${kclCountValue}, Water intake: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
+  const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
     .then(() => {
       console.log("Data copied successfully!");
     })
