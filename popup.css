@@ -86,6 +86,7 @@ h1 {
 
 .small-buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 10px;
 }
@@ -209,7 +210,7 @@ h1 {
   .tracker button,
   .reset-kcl,
   .reset-water {
-    font-size: 18px;
+    font-size: 13px;
     padding: 11px 20px;
     border-radius: 20px;
     background-color: #4caf75;
@@ -217,24 +218,32 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin: 7px;
-    width: 150px;
-    height: 50px;
+    width: 120px;
+    height: 38px;
   }
   
   /* .reset-kcl {
     background-color: #7a221c;
   } */
-
-
+  
+  
   @media screen and (max-width: 480px) {
     .small-buttons button {
       font-size: 11px;
       padding: 8px 16px;
-      width: 100px;
+      width:95px;
+      height: 30px;
+    }
+
+    .small-buttones button {
+    
+      font-size: 12px;
+      padding: 8px 16px;
+      width:65px;
       height: 30px;
     }
   }
-
+  
   .reset-water {
     background-color: #0ea5b9;
   }
@@ -256,27 +265,30 @@ h1 {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    margin: 150px 20px;
+    margin: 190px 10px 3px 2px;
     /* margin-bottom: 10px 20px; */
     /* border: 2px solid transparent; */
     /* border-image: linear-gradient(to right, #00e1ff, #15a7eb); */
     border-image-slice: 1;
-  display: inline-block;
+    display: inline-block;
     transform: scale(1.1);
+    /* position: absolute; */
+    /* bottom: 10px; */
+    transform: translate(50%, -50%);
+    
   }
   
-
-
-
-  #time-display {
-    font-size: 25px;
-    padding: 15x 32px;
-    border-radius: 20px;
-    right: 10px;
-  }
+  
+  
 }
 
 
+#time-display {
+  font-size: 25px;
+  padding: 15x 32px ;
+  border-radius: 20px;
+  right: 10px;
+}
 /* EDITABLE TEXTO 
 
 .editable-text {
