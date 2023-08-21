@@ -41,6 +41,17 @@ h1 {
   margin-top: 30px;
 }
 
+#elpepe {
+  font-size: 10px;
+  /* margin-right: 200px; */
+  margin: 0px 12px 25px 120px;
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  transform: translate(50%, -50%);
+  font-weight: bold;
+}
+
 .tracker {
   display: flex;
   flex-direction: column;
@@ -69,6 +80,26 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   /* margin: 5px; */
+  width: 140px;
+  height: 40px;
+}
+
+.small-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.small-buttons button {
+  display: block; /* or inline-block */
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #2a4962;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
   width: 140px;
   height: 40px;
 }
@@ -195,6 +226,15 @@ h1 {
   } */
 
 
+  @media screen and (max-width: 480px) {
+    .small-buttons button {
+      font-size: 11px;
+      padding: 8px 16px;
+      width: 100px;
+      height: 30px;
+    }
+  }
+
   .reset-water {
     background-color: #0ea5b9;
   }
@@ -206,15 +246,18 @@ h1 {
   }
   
   #copy-button, #enviarbtn {
-    font-size: 20px;
-    padding: 13px 20px;
+    font-size: 15px;
+    /* padding: 13px 22px; */
     border: none;
     border-radius: 20px;
+    width: 115px;
+    height: 40px;
     background-color: #36bda6;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    margin: 8px 20px;
+    margin: 150px 20px;
+    /* margin-bottom: 10px 20px; */
     /* border: 2px solid transparent; */
     /* border-image: linear-gradient(to right, #00e1ff, #15a7eb); */
     border-image-slice: 1;
