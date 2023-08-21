@@ -1,5 +1,7 @@
 const kclButton = document.getElementById('kclButton');
 const waterButton = document.getElementById('waterButton');
+const meatButton = document.getElementById('meatButton');
+const carbsButton = document.getElementById('carbsButton');
 const kclCount = document.getElementById('kclCount');
 const waterIntake = document.getElementById('waterIntake');
 const resetKclButton = document.querySelector('.reset-kcl');
@@ -36,6 +38,17 @@ waterButton.addEventListener('click', () => {
   localStorage.setItem('waterIntake', newWaterIntake.toString());
 });
 
+meatButton.addEventListener('click', () => {
+  const newKclCount = parseInt(kclCount.innerText) + 350; // Add 350 kcls
+  kclCount.innerText = newKclCount;
+  localStorage.setItem('kclCount', newKclCount.toString());
+});
+
+carbsButton.addEventListener('click', () => {
+  const newKclCount = parseInt(kclCount.innerText) + 350; // Add 350 kcls
+  kclCount.innerText = newKclCount;
+  localStorage.setItem('kclCount', newKclCount.toString());
+});
 
 // RESET BUTTON 
 
