@@ -45,7 +45,7 @@
         
 <div class="smallbuttoncontainer">
 
-        <div class="small-buttons">
+        <div class="small-buttons-kcls">
           <button id="meatButton">Add 350kcls</button>
           <button id="carbsButton">Add 1000kcls</button>
 
@@ -73,9 +73,32 @@
           <button id="fulboButton">fulbo</button>
           <button id="cardioButton">cardio</button>
         </div> -->
+        <div class="copypastenotion">
+        <!-- <button id="copy-button">Copy Data</button> -->
+        <button id="enviarbtn" onclick="window.location.href='https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8'">Copy Data</button>
+        </div>
         
-        <button id="copy-button">Copy Data</button>
-        <button id="enviarbtn" onclick="window.location.href='https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8'">Track it</button>
+        <!-- COPY & REDIRECTS TO NOTION -->
+
+        <script>
+          function copyAndRedirect() {
+            const kclCountValue = 100; // Replace with your actual value
+            const waterIntakeValue = 200; // Replace with your actual value
+            const timeDisplay = document.getElementById('time-display'); // Replace with your actual element
+          
+            const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;
+          
+            navigator.clipboard.writeText(dataToCopy)
+              .then(() => {
+                console.log("Data copied successfully!");
+                window.location.href = "https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8";
+              })
+              .catch((error) => {
+                console.error("Error copying data:", error);
+              });
+          }
+          </script>
+        
         
         <div class="export-button"></div> 
         
