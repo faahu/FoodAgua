@@ -3,6 +3,12 @@ const waterButton = document.getElementById('waterButton');
 const meatButton = document.getElementById('meatButton');
 const carbsButton = document.getElementById('carbsButton');
 
+const ml250Button = document.getElementById('ml250Button');
+const ml500Button = document.getElementById('ml500Button');
+const ml1000Button = document.getElementById('ml1000Button');
+
+
+
 // const foodsButton = document.getElementById('foodsButton');
 
 
@@ -69,6 +75,29 @@ resetWaterButton.addEventListener('click', () => {
   localStorage.removeItem('waterIntake');
   waterIntake.innerText = '0';
 });
+
+//AGUA BOTONES CHICOS
+
+ml250Button.addEventListener('click', () => {
+  updateWaterIntake(250);
+});
+
+ml500Button.addEventListener('click', () => {
+  updateWaterIntake(500);
+});
+
+ml1000Button.addEventListener('click', () => {
+  updateWaterIntake(1000);
+});
+
+
+function updateWaterIntake(ml) {
+  const currentWaterIntake = parseInt(waterIntake.innerText);
+  const newWaterIntake = currentWaterIntake + ml;
+  waterIntake.innerText = newWaterIntake;
+  localStorage.setItem('waterIntake', newWaterIntake.toString());
+}
+
 
 // EXCEL
 
