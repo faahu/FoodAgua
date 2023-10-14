@@ -59,7 +59,7 @@ meatButton.addEventListener('click', () => {
 });
 
 carbsButton.addEventListener('click', () => {
-  const newKclCount = parseInt(kclCount.innerText) + 350; // Add 350 kcls
+  const newKclCount = parseInt(kclCount.innerText) + 1000; // Add 350 kcls
   kclCount.innerText = newKclCount;
   localStorage.setItem('kclCount', newKclCount.toString());
 });
