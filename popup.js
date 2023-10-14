@@ -115,21 +115,21 @@ exportButton.addEventListener('click', () => {
 
 // COPY DATA
 
-document.getElementById("copy-button").addEventListener("click", function(){
-  const kclCountValue = parseInt(kclCount.innerText);
-  const waterIntakeValue = parseInt(waterIntake.innerText);
-  const currentTime = new Date();
-  const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
-  const formattedTime = currentTime.toLocaleTimeString('en-US', options);
+// document.getElementById("copy-button").addEventListener("click", function(){
+//   const kclCountValue = parseInt(kclCount.innerText);
+//   const waterIntakeValue = parseInt(waterIntake.innerText);
+//   const currentTime = new Date();
+//   const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
+//   const formattedTime = currentTime.toLocaleTimeString('en-US', options);
 
-  const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
-    .then(() => {
-      console.log("Data copied successfully!");
-    })
-    .catch((error) => {
-      console.error("Error copying data:", error);
-    });
-});
+//   const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
+//     .then(() => {
+//       console.log("Data copied successfully!");
+//     })
+//     .catch((error) => {
+//       console.error("Error copying data:", error);
+//     });
+// });
 
 // function updateTime() {
 //   const currentTime = new Date();
@@ -137,29 +137,6 @@ document.getElementById("copy-button").addEventListener("click", function(){
 //   const formattedTime = currentTime.toLocaleTimeString('en-US', options);
 //   timeDisplay.innerText = formattedTime;
 // }
-// function updateTime() {
-//   const currentTime = new Date();
-//   const options = {
-//     timeZone: 'America/Argentina/Buenos_Aires',
-//     year: 'numeric',
-//     month: 'short',
-//     day: 'numeric',
-//     hour: '2-digit',
-//     minute: '2-digit',
-//     second: '2-digit',
-//     hour12: false,
-//   };
-//   const formattedTime = currentTime.toLocaleString('en-US', options);
-//   timeDisplay.innerText = formattedTime;
-// }
-
-// // Update the time every second
-// setInterval(updateTime, 1000);
-
-
-
-
-// Update the time every second
 function updateTime() {
   const currentTime = new Date();
   const options = {
@@ -174,13 +151,17 @@ function updateTime() {
   };
   const formattedTime = currentTime.toLocaleString('en-US', options);
   timeDisplay.innerText = formattedTime;
-};
+}
 
 // Initial time update
 updateTime();
 
 // Update the time every second
 setInterval(updateTime, 1000);
+
+
+
+
 
 // // EDITABle texto
 
