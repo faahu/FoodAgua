@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const container = document.querySelector(".small-buttons-agua");
   container.appendChild(dropdown);
   container.appendChild(addButton);
-});
+  
 
 
   // Function to add calories to the calorie count
