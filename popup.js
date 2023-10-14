@@ -3,6 +3,9 @@ const waterButton = document.getElementById('waterButton');
 const meatButton = document.getElementById('meatButton');
 const carbsButton = document.getElementById('carbsButton');
 
+// const foodsButton = document.getElementById('foodsButton');
+
+
 // const biciButton = document.getElementById('biciButton');
 // const fulboButton = document.getElementById('fulboButton');
 // const cardioButton = document.getElementById('cardioButton');
@@ -170,3 +173,62 @@ setInterval(updateTime, 1000);
 //     });
 //   }
 // }
+
+
+
+//buton THE LAS FOODS SELEECTABLE
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Food items and their calorie values
+  const foods = {
+    "Apple": 52,
+    "Banana": 96,
+    "Chicken Breast": 165,
+    "Salmon": 206,
+    "Avena, 1egg, banana, pasta de mani, Scoop, lech" : 700,
+    // Add more food items and their calorie values here
+  };
+
+  // Get the "Foods" button and add a click event listener
+  const foodsButton = document.getElementById("foodsButton");
+  foodsButton.addEventListener("click", function() {
+    // Create a dropdown menu to select food items
+    const dropdown = document.createElement("select");
+
+    // Add an option for each food item
+    for (const food in foods) {
+      const option = document.createElement("option");
+      option.text = food;
+      dropdown.add(option);
+    }
+
+    // Add a button to add the selected food item to the calorie count
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add Food";
+    addButton.addEventListener("click", function() {
+      const selectedFood = dropdown.value;
+      const calories = foods[selectedFood];
+      addCalories(calories);
+    });
+
+    // Append the dropdown menu and button to the DOM
+    const container = document.querySelector(".small-buttons");
+    container.appendChild(dropdown);
+    container.appendChild(addButton);
+  });
+
+
+  const container = document.querySelector(".small-buttons-agua");
+  container.appendChild(dropdown);
+  container.appendChild(addButton);
+});
+
+
+  // Function to add calories to the calorie count
+  function addCalories(calories) {
+    const kclCount = document.getElementById("kclCount");
+    const currentCalories = parseInt(kclCount.innerText);
+    const newCalories = currentCalories + calories;
+    kclCount.innerText = newCalories;
+  }
+});
