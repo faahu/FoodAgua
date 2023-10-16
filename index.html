@@ -61,6 +61,18 @@
     </div>
 
 
+<!-- excercise buttons -->
+
+<div class="buttons-fit">
+  <button id="f5Button" onclick="addValue('F5')">F5</button>
+  <button id="gymButton" onclick="addValue('Gym')">Gym</button>
+  <button id="biciButton" onclick="addValue('Bici')">Bici</button>
+</div>
+
+
+<button id="enviarbtn" onclick="copyAndRedirect()">Track it</button>    
+
+
 <!-- LISTA DE COMIDAS BOTON con macros propias -->
 <!-- 
         <div class="small-buttons">
@@ -75,18 +87,17 @@
         </div> -->
         <!-- <div class="copypastenotion"> -->
         <!-- <button id="copy-button">Copy Data</button> -->
-        <button id="enviarbtn" onclick="copyAndRedirect()">Track it</button>    
         
         <!-- COPY & REDIRECTS TO NOTION -->
 
-        <script>
+        <!-- <script>
           function copyAndRedirect() {
             const kclCountValue = 100; // Replace with your actual value
             const waterIntakeValue = 200; // Replace with your actual value
             const timeDisplay = document.getElementById('time-display'); // Replace with your actual element
           
-            const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;
-          
+            // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;          
+            const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${formattedTime}`;          
             navigator.clipboard.writeText(dataToCopy)
               .then(() => {
                 console.log("Data copied successfully!");
@@ -96,7 +107,7 @@
                 console.error("Error copying data:", error);
               });
           }
-          </script>
+          </script> -->
         
         
         <div class="export-button"></div> 

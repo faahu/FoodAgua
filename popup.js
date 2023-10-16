@@ -9,13 +9,6 @@ const ml1000Button = document.getElementById('ml1000Button');
 
 
 
-// const foodsButton = document.getElementById('foodsButton');
-
-
-// const biciButton = document.getElementById('biciButton');
-// const fulboButton = document.getElementById('fulboButton');
-// const cardioButton = document.getElementById('cardioButton');
-
 const kclCount = document.getElementById('kclCount');
 const waterIntake = document.getElementById('waterIntake');
 const resetKclButton = document.querySelector('.reset-kcl');
@@ -23,11 +16,19 @@ const resetWaterButton = document.querySelector('.reset-water');
 const exportButton = document.querySelector('.export-button');
 const timeDisplay = document.getElementById('time-display');
 
-// const setAlarmButton = document.getElementById('setAlarmButton');
-// setAlarmButton.addEventListener('click', setAlarm);
+
+// Const no working
+  // const foodsButton = document.getElementById('foodsButton');
+  // const biciButton = document.getElementById('biciButton');
+  // const fulboButton = document.getElementById('fulboButton');
+  // const cardioButton = document.getElementById('cardioButton');
+  // const setAlarmButton = document.getElementById('setAlarmButton');
+  // setAlarmButton.addEventListener('click', setAlarm);
 
 
 // Initialize the values
+
+
 let storedKclCount = localStorage.getItem('kclCount');
 let storedWaterIntake = localStorage.getItem('waterIntake');
 if (!storedKclCount) {
@@ -64,6 +65,14 @@ carbsButton.addEventListener('click', () => {
   localStorage.setItem('kclCount', newKclCount.toString());
 });
 
+// Function to add calories to the calorie count
+function addCalories(calories) {
+  const kclCount = document.getElementById("kclCount");
+  const currentCalories = parseInt(kclCount.innerText);
+  const newCalories = currentCalories + calories;
+  kclCount.innerText = newCalories;
+}
+
 // RESET BUTTON 
 
 resetKclButton.addEventListener('click', () => {
@@ -99,45 +108,77 @@ function updateWaterIntake(ml) {
 }
 
 
-// EXCEL
+/* f5, gym , cardio afk consts
 
-exportButton.addEventListener('click', () => {
-  const kclCountValue = parseInt(kclCount.innerText);
-  const waterIntakeValue = parseInt(waterIntake.innerText);
-  const csvContent = `data:text/csv;charset=utf-8,KCL count,Water intake\n${kclCountValue},${waterIntakeValue}`;
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', 'kcl-water-data.csv');
-  document.body.appendChild(link);
-  link.click();
+
+
+// Add event listeners to F5, Gym, and Bici buttons
+const f5Button = document.getElementById('f5Button');
+const gymButton = document.getElementById('gymButton');
+const biciButton = document.getElementById('biciButton'); */
+
+/* f5Button.addEventListener('click', () => {
+  const currentButtons = f5Button.innerText;
+  const newButtons = currentButtons + ' F5';
+  f5Button.innerText = newButtons;
 });
 
-// COPY DATA
+gymButton.addEventListener('click', () => {
+  const currentButtons = gymButton.innerText;
+  const newButtons = currentButtons + ' Gym';
+  gymButton.innerText = newButtons;
+});
 
-// document.getElementById("copy-button").addEventListener("click", function(){
-//   const kclCountValue = parseInt(kclCount.innerText);
-//   const waterIntakeValue = parseInt(waterIntake.innerText);
-//   const currentTime = new Date();
-//   const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
-//   const formattedTime = currentTime.toLocaleTimeString('en-US', options);
+biciButton.addEventListener('click', () => {
+  const currentButtons = biciButton.innerText;
+  const newButtons = currentButtons + ' Bici';
+  biciButton.innerText = newButtons;
+}); */
 
-//   const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
-//     .then(() => {
-//       console.log("Data copied successfully!");
-//     })
-//     .catch((error) => {
-//       console.error("Error copying data:", error);
-//     });
-// });
+/* gym f5 y bici normal sin colores
+Normal
 
-// function updateTime() {
-//   const currentTime = new Date();
-//   const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
-//   const formattedTime = currentTime.toLocaleTimeString('en-US', options);
-//   timeDisplay.innerText = formattedTime;
-// }
-function updateTime() {
+let f5Value = 0;
+let gymValue = 0;
+let biciValue = 0;
+
+// Function to add the value of the clicked button
+function addValue(buttonTitle) {
+  if (buttonTitle === 'F5') {
+    f5Value++;
+  } else if (buttonTitle === 'Gym') {
+    gymValue++;
+  } else if (buttonTitle === 'Bici') {
+    biciValue++;
+  }
+} */
+
+
+
+/* EJERCICIOS CON COLORES*/
+
+let f5Value = 0;
+let gymValue = 0;
+let biciValue = 0;
+
+// Function to add the value of the clicked button
+function addValue(buttonTitle) {
+  if (buttonTitle === 'F5') {
+    f5Value++;
+    const f5Button = document.getElementById('f5Button');
+    f5Button.classList.add('selected');
+  } else if (buttonTitle === 'Gym') {
+    gymValue++;
+    const gymButton = document.getElementById('gymButton');
+    gymButton.classList.add('selected');
+  } else if (buttonTitle === 'Bici') {
+    biciValue++;
+    const biciButton = document.getElementById('biciButton');
+    biciButton.classList.add('selected');
+  }
+}
+
+  function updateTime() {
   const currentTime = new Date();
   const options = {
     timeZone: 'America/Argentina/Buenos_Aires',
@@ -160,33 +201,31 @@ updateTime();
 setInterval(updateTime, 1000);
 
 
+// TRACK IT COPY BUTTON
+function copyAndRedirect() {
+  const kclCountValue = 100; // Replace with your actual value
+  const waterIntakeValue = 200; // Replace with your actual value
+  const formattedTimeElement = document.getElementById('time-display');
+  const formattedTime = formattedTimeElement.innerText;
+  
+  
+  // const formattedTime = document.getElementById('time-display'); // Replace with your actual element
+  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${formattedTime}, Time: ${currentTime}`;          
+  
+  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${formattedTime}`;    
+  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
+  const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
 
 
-
-// // EDITABle texto
-
-// function makeEditable(element) {
-//   const inputEl = element.querySelector('input[type="text"]');
-//   if (inputEl) {
-//     inputEl.readOnly = false;
-//     inputEl.focus();
-//     element.classList.remove('uneditable');
-//     inputEl.addEventListener('blur', () => {
-//       inputEl.readOnly = true;
-//       element.classList.add('uneditable');
-//     });
-//     inputEl.addEventListener('keyup', (event) => {
-//       if (event.key === 'Enter') {
-//         inputEl.readOnly = true;
-//         element.classList.add('uneditable');
-//       }
-//     });
-//   }
-// }
-
-
-
-//buton THE LAS FOODS SELEECTABLE
+  navigator.clipboard.writeText(dataToCopy)
+    .then(() => {
+      console.log("Data copied successfully!");
+      window.location.href = "https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8";
+    })
+    .catch((error) => {
+      console.error("Error copying data:", error);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   // Food items and their calorie values
@@ -198,20 +237,20 @@ document.addEventListener("DOMContentLoaded", function() {
     "Avena, 1egg, banana, pasta de mani, Scoop, lech" : 700,
     // Add more food items and their calorie values here
   };
-
+  
   // Get the "Foods" button and add a click event listener
   const foodsButton = document.getElementById("foodsButton");
   foodsButton.addEventListener("click", function() {
     // Create a dropdown menu to select food items
     const dropdown = document.createElement("select");
-
+    
     // Add an option for each food item
     for (const food in foods) {
       const option = document.createElement("option");
       option.text = food;
       dropdown.add(option);
     }
-
+    
     // Add a button to add the selected food item to the calorie count
     const addButton = document.createElement("button");
     addButton.textContent = "Add Food";
@@ -220,25 +259,73 @@ document.addEventListener("DOMContentLoaded", function() {
       const calories = foods[selectedFood];
       addCalories(calories);
     });
-
+    
     // Append the dropdown menu and button to the DOM
     const container = document.querySelector(".small-buttons");
     container.appendChild(dropdown);
     container.appendChild(addButton);
   });
-
-
+  
+  
   const container = document.querySelector(".small-buttons-agua");
   container.appendChild(dropdown);
   container.appendChild(addButton);
   
-
-
-  // Function to add calories to the calorie count
-  function addCalories(calories) {
-    const kclCount = document.getElementById("kclCount");
-    const currentCalories = parseInt(kclCount.innerText);
-    const newCalories = currentCalories + calories;
-    kclCount.innerText = newCalories;
-  }
+  
+  
+  
 });
+
+  //Fin del code
+
+/* EDITABle texto
+  
+      function makeEditable(element) {
+        const inputEl = element.querySelector('input[type="text"]');
+        if (inputEl) {
+            inputEl.readOnly = false;
+            inputEl.focus();
+            element.classList.remove('uneditable');
+            inputEl.addEventListener('blur', () => {
+                inputEl.readOnly = true;
+                element.classList.add('uneditable');
+              });
+              inputEl.addEventListener('keyup', (event) => {
+                  if (event.key === 'Enter') {
+                      inputEl.readOnly = true;
+                      element.classList.add('uneditable');
+                    }
+                  });
+                }
+              } */
+             
+/* EXCEL Y COPY DATA
+            exportButton.addEventListener('click', () => {
+                const kclCountValue = parseInt(kclCount.innerText);
+                const waterIntakeValue = parseInt(waterIntake.innerText);
+                const csvContent = `data:text/csv;charset=utf-8,KCL count,Water intake\n${kclCountValue},${waterIntakeValue}`;
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement('a');
+                link.setAttribute('href', encodedUri);
+                link.setAttribute('download', 'kcl-water-data.csv');
+                document.body.appendChild(link);
+                link.click();
+              }); */
+  
+/* COPY DATA
+              
+              document.getElementById("copy-button").addEventListener("click", function(){
+                  const kclCountValue = parseInt(kclCount.innerText);
+    const waterIntakeValue = parseInt(waterIntake.innerText);
+    const currentTime = new Date();
+    const options = { timeZone: 'America/Argentina/Buenos_Aires', hour12: false };
+    const formattedTime = currentTime.toLocaleTimeString('en-US', options);
+  
+    const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${timeDisplay.innerText}`;  navigator.clipboard.writeText(dataToCopy)
+      .then(() => {
+        console.log("Data copied successfully!");
+      })
+      .catch((error) => {
+          console.error("Error copying data:", error);
+        });
+    }); */
