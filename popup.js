@@ -155,30 +155,8 @@ function addValue(buttonTitle) {
 
 
 
-/* EJERCICIOS CON COLORES*/
 
-let f5Value = 0;
-let gymValue = 0;
-let biciValue = 0;
-
-// Function to add the value of the clicked button
-function addValue(buttonTitle) {
-  if (buttonTitle === 'F5') {
-    f5Value++;
-    const f5Button = document.getElementById('f5Button');
-    f5Button.classList.add('selected');
-  } else if (buttonTitle === 'Gym') {
-    gymValue++;
-    const gymButton = document.getElementById('gymButton');
-    gymButton.classList.add('selected');
-  } else if (buttonTitle === 'Bici') {
-    biciValue++;
-    const biciButton = document.getElementById('biciButton');
-    biciButton.classList.add('selected');
-  }
-}
-
-  function updateTime() {
+function updateTime() {
   const currentTime = new Date();
   const options = {
     timeZone: 'America/Argentina/Buenos_Aires',
@@ -200,6 +178,55 @@ updateTime();
 // Update the time every second
 setInterval(updateTime, 1000);
 
+/* Suma pero se ven los 3
+ */
+// /* EJERCICIOS CON COLORES*/
+
+// let f5Value = 0;
+// let gymValue = 0;
+// let biciValue = 0;
+
+// // Function to add the value of the clicked button
+// function addValue(buttonTitle) {
+//   if (buttonTitle === 'F5') {
+//     f5Value++;
+//     const f5Button = document.getElementById('f5Button');
+//     f5Button.classList.add('selected');
+//   } else if (buttonTitle === 'Gym') {
+//     gymValue++;
+//     const gymButton = document.getElementById('gymButton');
+//     gymButton.classList.add('selected');
+//   } else if (buttonTitle === 'Bici') {
+//     biciValue++;
+//     const biciButton = document.getElementById('biciButton');
+//     biciButton.classList.add('selected');
+//   }
+// }
+
+let f5Clicked = false;
+let gymClicked = false;
+let biciClicked = false;
+
+// Function to add the value of the clicked button
+function addValue(buttonTitle) {
+  if (buttonTitle === 'F5') {
+    
+    const f5Button = document.getElementById('f5Button');
+    f5Button.classList.add('selected');
+    f5Clicked = true; // Mark F5 button as clicked
+  } else if (buttonTitle === 'Gym') {
+
+    const gymButton = document.getElementById('gymButton');
+    gymButton.classList.add('selected');
+    gymClicked = true; // Mark Gym button as clicked
+  } else if (buttonTitle === 'Bici') {
+
+    const biciButton = document.getElementById('biciButton');
+    biciButton.classList.add('selected');
+    biciClicked = true; // Mark Bici button as clicked
+
+  }
+}
 
 // TRACK IT COPY BUTTON
 function copyAndRedirect() {
@@ -207,15 +234,28 @@ function copyAndRedirect() {
   const waterIntakeValue = document.getElementById('waterIntake'); // 2do error
   const formattedTimeElement = document.getElementById('time-display');
   const formattedTime = formattedTimeElement.innerText;
-  const dataToCopy = `Calories: ${kclCount.innerHTML}, Water: ${waterIntake.innerHTML}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
-  // 
+  // const dataToCopy = `Calories: ${kclCount.innerHTML}, Water: ${waterIntake.innerHTML}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
+
+  let dataToCopy = `Calories: ${kclCount.innerHTML}, Water: ${waterIntake.innerHTML}`;
+
+    // Check if F5, Gym, or Bici buttons have been clicked and add their values accordingly
+    if (f5Clicked) {
+      dataToCopy += `, F5: 1`;
+    }
+    if (gymClicked) {
+      dataToCopy += `, gym: 1`;
+    }
+    if (biciClicked) {
+      dataToCopy += `, bici: 1`;
+    }
+    
+  dataToCopy += `, Time: ${formattedTime}`;
   
-
-
+  
   navigator.clipboard.writeText(dataToCopy)
-    .then(() => {
-      console.log("Data copied successfully!");
-      window.location.href = "https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8";
+  .then(() => {
+    console.log("Data copied successfully!");
+    window.location.href = "https://www.notion.so/Calories-Track-2023-a02a9e695fb246a381a239b1d371d5c8";
     })
     .catch((error) => {
       console.error("Error copying data:", error);
