@@ -1,3 +1,9 @@
+
+const resetKclButton = document.querySelector('.reset-kcl');
+const resetWaterButton = document.querySelector('.reset-water');
+const exportButton = document.querySelector('.export-button');
+const timeDisplay = document.getElementById('time-display');
+
 const kclButton = document.getElementById('kclButton');
 const waterButton = document.getElementById('waterButton');
 const meatButton = document.getElementById('meatButton');
@@ -6,16 +12,6 @@ const carbsButton = document.getElementById('carbsButton');
 const ml250Button = document.getElementById('ml250Button');
 const ml500Button = document.getElementById('ml500Button');
 const ml1000Button = document.getElementById('ml1000Button');
-
-
-
-const kclCount = document.getElementById('kclCount');
-const waterIntake = document.getElementById('waterIntake');
-const resetKclButton = document.querySelector('.reset-kcl');
-const resetWaterButton = document.querySelector('.reset-water');
-const exportButton = document.querySelector('.export-button');
-const timeDisplay = document.getElementById('time-display');
-
 
 // Const no working
   // const foodsButton = document.getElementById('foodsButton');
@@ -202,6 +198,9 @@ setInterval(updateTime, 1000);
 //     biciButton.classList.add('selected');
 //   }
 // }
+
+/* CLICKEAD SE COPIAN DE A UNO
+ */
 
 let f5Clicked = false;
 let gymClicked = false;
