@@ -203,18 +203,13 @@ setInterval(updateTime, 1000);
 
 // TRACK IT COPY BUTTON
 function copyAndRedirect() {
-  const kclCountValue = 100; // Replace with your actual value
-  const waterIntakeValue = 200; // Replace with your actual value
+  const kclCount = document.getElementById('kclCount'); // Replace with your actual value
+  const waterIntakeValue = document.getElementById('waterIntake'); // 2do error
   const formattedTimeElement = document.getElementById('time-display');
   const formattedTime = formattedTimeElement.innerText;
+  const dataToCopy = `Calories: ${kclCount.innerHTML}, Water: ${waterIntake.innerHTML}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
+  // 
   
-  
-  // const formattedTime = document.getElementById('time-display'); // Replace with your actual element
-  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${formattedTime}, Time: ${currentTime}`;          
-  
-  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, Time: ${formattedTime}`;    
-  // const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
-  const dataToCopy = `Calories: ${kclCountValue}, Water: ${waterIntakeValue}, F5: ${f5Value}, Gym: ${gymValue}, Bici: ${biciValue}, Time: ${formattedTime}`;
 
 
   navigator.clipboard.writeText(dataToCopy)
@@ -229,7 +224,11 @@ function copyAndRedirect() {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Food items and their calorie values
-  const foods = {
+  
+  
+/*comidas con macros
+
+const foods = {
     "Apple": 52,
     "Banana": 96,
     "Chicken Breast": 165,
@@ -237,7 +236,8 @@ document.addEventListener("DOMContentLoaded", function() {
     "Avena, 1egg, banana, pasta de mani, Scoop, lech" : 700,
     // Add more food items and their calorie values here
   };
-  
+   */
+
   // Get the "Foods" button and add a click event listener
   const foodsButton = document.getElementById("foodsButton");
   foodsButton.addEventListener("click", function() {
@@ -252,13 +252,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     // Add a button to add the selected food item to the calorie count
-    const addButton = document.createElement("button");
+
+   /*  const addButton = document.createElement("button");
     addButton.textContent = "Add Food";
     addButton.addEventListener("click", function() {
       const selectedFood = dropdown.value;
       const calories = foods[selectedFood];
       addCalories(calories);
-    });
+    }); */
     
     // Append the dropdown menu and button to the DOM
     const container = document.querySelector(".small-buttons");
@@ -271,9 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
   container.appendChild(dropdown);
   container.appendChild(addButton);
   
-  
-  
-  
+
 });
 
   //Fin del code
